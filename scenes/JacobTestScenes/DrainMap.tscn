@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DrainedTexture" type="ColorRect" parent="."]
+margin_right = 1023.0
+margin_bottom = 601.0
+
+[node name="RegularTexture" type="ColorRect" parent="."]
+margin_right = 856.0
+margin_bottom = 446.0
+color = Color( 0.215686, 0.717647, 0.12549, 1 )
