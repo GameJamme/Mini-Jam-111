@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Drainable.gd"
 }, {
+"base": "Node2D",
+"class": "PassiveDialog",
+"language": "GDScript",
+"path": "res://scenes/JacobTestScenes/DialogTest/PassiveDialog.gd"
+}, {
 "base": "Reference",
 "class": "SceneData",
 "language": "GDScript",
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Drainable": "",
+"PassiveDialog": "",
 "SceneData": "",
 "Scenes": "",
 "Transition": ""

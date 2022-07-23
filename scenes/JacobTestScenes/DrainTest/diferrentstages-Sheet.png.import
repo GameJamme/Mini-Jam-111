@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/diferrentstages-Sheet.png-f29edf0954dee0ed664743115e2ed3b8.s3tc.stex"
-path.etc2="res://.import/diferrentstages-Sheet.png-f29edf0954dee0ed664743115e2ed3b8.etc2.stex"
+path.s3tc="res://.import/diferrentstages-Sheet.png-07180b0dd7fd34dcc039559e7959bf40.s3tc.stex"
+path.etc2="res://.import/diferrentstages-Sheet.png-07180b0dd7fd34dcc039559e7959bf40.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/JacobTestScenes/diferrentstages-Sheet.png"
-dest_files=[ "res://.import/diferrentstages-Sheet.png-f29edf0954dee0ed664743115e2ed3b8.s3tc.stex", "res://.import/diferrentstages-Sheet.png-f29edf0954dee0ed664743115e2ed3b8.etc2.stex" ]
+source_file="res://scenes/JacobTestScenes/DrainTest/diferrentstages-Sheet.png"
+dest_files=[ "res://.import/diferrentstages-Sheet.png-07180b0dd7fd34dcc039559e7959bf40.s3tc.stex", "res://.import/diferrentstages-Sheet.png-07180b0dd7fd34dcc039559e7959bf40.etc2.stex" ]
 
 [params]
 
