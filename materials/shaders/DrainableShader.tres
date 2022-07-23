@@ -1,0 +1,20 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform sampler2D alpha_mask;
+
+void vertex(){}
+
+void fragment(){
+	COLOR = texture(TEXTURE, UV);
+	vec4 alpha_mask_read = texture(alpha_mask, UV.xy);
+	float red_channel = alpha_mask_read.r;
+	
+	COLOR.a = red_channel;
+}
+
+void light(){
+	
+}"
