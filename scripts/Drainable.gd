@@ -4,11 +4,11 @@ extends Sprite
 # We will need to store an alpha_bitmap image for each level of the game
 # these will be modified during runtime and used to create textures that will 
 
-var image_texture : ImageTexture = ImageTexture.new()
-var alpha_bitmap : Image = Image.new()
+var _image_texture : ImageTexture = ImageTexture.new()
+var _alpha_bitmap : Image = Image.new()
 
-export var _min_drain_time : float = 5.0
-export var _max_drain_time : float = 10.0
+export var _min_drain_time : float = 5.0 	# drain faster towards the center
+export var _max_drain_time : float = 10.0	# drain slower near the edge
 
 export var _zero_distance_drain : float = 0.0 #drain 100% at close range
 export var _max_distance_drain : float = 0.6 #drain only up to 60% at the edge
@@ -79,25 +79,26 @@ func _set_shader_texture(texture : ImageTexture, sprite : Sprite) -> void:
 	sprite.material.set_shader_param("alpha_mask", texture)
 
 func _update_image_texture():
-	image_texture.create_from_image(alpha_bitmap)
+	_image_texture.create_from_image(_alpha_bitmap)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	alpha_bitmap = _get_default_image_map(self.texture)
+	_alpha_bitmap = _get_default_image_map(self.texture)
 	_update_image_texture()
-	_set_shader_texture(image_texture, self)
+	_set_shader_texture(_image_texture, self)
 
 func _map_global_coords_to_rect(rect_pos : Vector2, rect_size: Vector2, global_pos : Vector2):
-	var local_pos = global_pos
+	var local_pos = global_pos - rect_pos
 	local_pos.x += rect_size.x / 2.0
 	local_pos.y += rect_size.y / 2.0
 	
 	return local_pos
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var localized_mouse_pos : Vector2 = _map_global_coords_to_rect(position, get_rect().size, get_local_mouse_position())
-	var healing = _drain_image(alpha_bitmap, localized_mouse_pos, 100, delta)
+# target_pos is the center of the area to be drained
+# radius is how far the effect reaches from the target location
+func on_drain_tick(target_pos : Vector2, radius : float, delta_time : float):
+	var localized_pos : Vector2 = _map_global_coords_to_rect(position, get_rect().size, target_pos)
+	var healing = _drain_image(_alpha_bitmap, localized_pos, radius, delta_time)
 	_update_image_texture()
 	if(healing > 0):
 		emit_signal("drained", healing)
