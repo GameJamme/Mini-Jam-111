@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Reference",
 "class": "DialogSoundBox",
 "language": "GDScript",
-"path": "res://scenes/JacobTestScenes/DialogTest/DialogSoundBox.gd"
+"path": "res://scripts/DialogSoundBox.gd"
 }, {
 "base": "Sprite",
 "class": "Drainable",
@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "PassiveDialog",
 "language": "GDScript",
-"path": "res://scenes/JacobTestScenes/DialogTest/PassiveDialog.gd"
+"path": "res://scripts/PassiveDialog.gd"
 }, {
 "base": "Reference",
 "class": "SceneData",
