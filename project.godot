@@ -14,10 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Drainable.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "PassiveDialog",
 "language": "GDScript",
-"path": "res://scenes/JacobTestScenes/DialogTest/PassiveDialog.gd"
+"path": "res://scenes/JacobTestScenes/SoundBoxTest/PassiveDialog.gd"
 }, {
 "base": "Reference",
 "class": "SceneData",
