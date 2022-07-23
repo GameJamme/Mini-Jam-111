@@ -1,5 +1,5 @@
+class_name MusicPlayer
 extends Node
-
 
 export(Dictionary) var tracks : Dictionary
 
@@ -21,12 +21,11 @@ func _ready():
 	add_child(next_tween)
 	
 	#testing
-	
-	start("VibrantMeadow")
-	yield(get_tree().create_timer(10), "timeout")
-	start("TownSquare")
-	yield(get_tree().create_timer(10), "timeout")
-	start("VibrantMeadow")
+	#start("VibrantMeadow")
+	#yield(get_tree().create_timer(10), "timeout")
+	#start("TownSquare")
+	#yield(get_tree().create_timer(10), "timeout")
+	#start("VibrantMeadow")
 
 
 func start(track_name : String):	
