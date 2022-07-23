@@ -42,18 +42,29 @@ func _ready():
 func _get_random_time() -> float:
 	return rand_range(random_time_min, random_time_max)
 
+
 func _on_random_timer_timeout():
 	run_dialog(rand_range(0,dialogs.size()))
 
 
+# Triggers the dialog at the given dialogs index
 func run_dialog(dialog_index : int):
-	if dialog_index < 0 or dialog_index >= dialogs.size():
+	if not has_dialog(dialog_index):
 		return
 	
 	_current_dialog = dialogs[dialog_index]
 	_screen_text = ""
 	
 	_coroutine = _run_dialog_coroutine()
+
+
+func has_dialog(dialog_index : int) -> bool:
+	return dialog_index >= 0 or dialog_index < num_of_dialogs()
+
+
+func num_of_dialogs() -> int:
+	return dialogs.size()
+
 
 func _run_dialog_coroutine():
 	for letter in _current_dialog:
