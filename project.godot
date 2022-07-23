@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Drainable.gd"
 }, {
-"base": "AudioStreamPlayer2D",
+"base": "Reference",
 "class": "OneShotAudio",
 "language": "GDScript",
-"path": "res://scenes/JacobTestScenes/DialogTest/OneShotAudio.gd"
+"path": "res://scripts/OneShotAudio.gd"
 }, {
 "base": "Node2D",
 "class": "PassiveDialog",
