@@ -21,6 +21,9 @@ var _current_dialog_letter_index : int
 var random_timer : Timer = Timer.new()
 var hide_timer : Timer = Timer.new()
 
+signal dialog_started(dialog)
+signal letter_typed(letter)
+
 var _coroutine
 
 # Called when the node enters the scene tree for the first time.
@@ -55,6 +58,8 @@ func run_dialog(dialog_index : int):
 	_current_dialog = dialogs[dialog_index]
 	_screen_text = ""
 	
+	emit_signal("dialog_started", _current_dialog)
+	
 	_coroutine = _run_dialog_coroutine()
 
 
@@ -70,6 +75,7 @@ func _run_dialog_coroutine():
 	for letter in _current_dialog:
 		_screen_text += letter
 		_set_text("\"" + _screen_text + "\"")
+		emit_signal("letter_typed", letter)
 		yield(get_tree().create_timer(letter_time), "timeout")
 	
 	hide_timer.start(hide_time)
