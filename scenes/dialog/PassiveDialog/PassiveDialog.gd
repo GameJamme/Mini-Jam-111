@@ -25,7 +25,7 @@ signal dialog_started(dialog)
 signal letter_typed(letter)
 signal dialog_completed
 
-var _coroutine
+var _dialog_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -61,7 +61,8 @@ func run_dialog(dialog_index : int):
 	
 	emit_signal("dialog_started", _current_dialog)
 	
-	_coroutine = _run_dialog_coroutine()
+	_dialog_count += 1
+	_run_dialog_coroutine()
 
 
 func has_dialog(dialog_index : int) -> bool:
@@ -73,7 +74,12 @@ func num_of_dialogs() -> int:
 
 
 func _run_dialog_coroutine():
+	
+	var this_dialog = _dialog_count
+	
 	for letter in _current_dialog:
+		if this_dialog != _dialog_count:
+			return
 		_screen_text += letter
 		_set_text("\"" + _screen_text + "\"")
 		emit_signal("letter_typed", letter)

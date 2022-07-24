@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TreeRat.png-0be47276c91682b9db2e0fdb0e25a981.stex"
+path="res://.import/MinijamTitlescreenc.png-eec1c556d4e1cd1db351edd475091ffb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/JacobTestScenes/PrototypeGame/Animals/TreeRat.png"
-dest_files=[ "res://.import/TreeRat.png-0be47276c91682b9db2e0fdb0e25a981.stex" ]
+source_file="res://assets/sprites/MinijamTitlescreenc.png"
+dest_files=[ "res://.import/MinijamTitlescreenc.png-eec1c556d4e1cd1db351edd475091ffb.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
