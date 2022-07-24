@@ -10,7 +10,7 @@ var moving : bool = false
 var animating : bool = false
 
 func _ready():
-	$WalkingAnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
+	$AnimationPlayer.connect("animation_finished", self, "_on_animation_finished")
 
 func _physics_process(delta):
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -19,14 +19,15 @@ func _physics_process(delta):
 	moving = direction.length_squared() > 0
 	if(!animating and moving):
 		_animate()
+		pass
 
 
 func _animate():
-	$WalkingAnimationPlayer.play("Wobble")
+	$AnimationPlayer.play("WobbleAnimation")
 
 
 func _on_animation_finished(name):
-	if name != "Wobble":
+	if name != "WobbleAnimation":
 		return
 	
 	if moving:

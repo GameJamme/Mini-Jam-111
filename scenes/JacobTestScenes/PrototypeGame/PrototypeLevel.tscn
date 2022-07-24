@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/ForestPath.png" type="Texture" id=1]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/WitchHut.png" type="Texture" id=2]
@@ -8,86 +8,14 @@
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Animals/TreeRat.png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/black-chancery/BLKCHCRY.TTF" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/SquirrelBehavior.gd" type="Script" id=8]
-[ext_resource path="res://scripts/player/movement.gd" type="Script" id=9]
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/VillaMansion.png" type="Texture" id=10]
-[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MinijamPlayerucus.png" type="Texture" id=11]
-[ext_resource path="res://scenes/dialog/SoundBox/SoundBox.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep001.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep006.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep002.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep004.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep004.tscn" type="PackedScene" id=17]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep001.tscn" type="PackedScene" id=18]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep008.tscn" type="PackedScene" id=19]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep005.tscn" type="PackedScene" id=20]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep005.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep007.tscn" type="PackedScene" id=22]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep001.tscn" type="PackedScene" id=23]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep002.tscn" type="PackedScene" id=24]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep006.tscn" type="PackedScene" id=25]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep003.tscn" type="PackedScene" id=26]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep004.tscn" type="PackedScene" id=27]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep005.tscn" type="PackedScene" id=28]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep006.tscn" type="PackedScene" id=29]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep002.tscn" type="PackedScene" id=30]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep003.tscn" type="PackedScene" id=31]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep003.tscn" type="PackedScene" id=32]
-[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.gd" type="Script" id=33]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/WalkingAreas.gd" type="Script" id=34]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MusicAreas.gd" type="Script" id=35]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 7 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9.5, 5 )
-
-[sub_resource type="Animation" id=4]
-resource_name = "Wobble"
-length = 0.4
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0503002, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -5 ), Vector2( 0, -2 ), Vector2( 0, -3 ), Vector2( 0, -5 ), Vector2( 0, -3 ), Vector2( 0, -2 ), Vector2( 0, -5 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0503002, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 10.0252, 20.0, 10.0252, 0.0, -10.0, -20.0, -10.0, 0.0 ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("FootstepManager")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [  ],
-"method": "on_step"
-}, {
-"args": [  ],
-"method": "on_step"
-} ]
-}
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 123.016
@@ -161,42 +89,7 @@ valign = 1
 position = Vector2( 1912, 463 )
 texture = ExtResource( 10 )
 
-[node name="Player" type="KinematicBody2D" parent="." groups=["player"]]
-position = Vector2( 1626, 490 )
-script = ExtResource( 9 )
-move_speed = 100
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0.5, 11 )
-shape = SubResource( 2 )
-
-[node name="SmoothFollowCamera" type="Camera2D" parent="Player"]
-current = true
-zoom = Vector2( 0.5, 0.5 )
-process_mode = 0
-smoothing_enabled = true
-smoothing_speed = 4.0
-
-[node name="WalkingAnimationPlayer" type="AnimationPlayer" parent="Player"]
-anims/Wobble = SubResource( 4 )
-
-[node name="FootstepManager" type="Node2D" parent="Player"]
-script = ExtResource( 33 )
-
-[node name="WoodFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
-SFX_scenes = [ ExtResource( 13 ), ExtResource( 15 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 25 ) ]
-
-[node name="StoneFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
-SFX_scenes = [ ExtResource( 18 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 19 ) ]
-
-[node name="GrassFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
-SFX_scenes = [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ]
-
 [node name="BoundingWalls" type="Node2D" parent="."]
-visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BoundingWalls"]
 
@@ -223,7 +116,6 @@ shape = SubResource( 3 )
 polygon = PoolVector2Array( -2078, 1534, -2075, 1473, -1934, 1474, -1934, 1277, -1729, 1279, -1728, 1423, -1642, 1424, -1641, 1586, -1889, 1584, -1890, 1619, -2011, 1621, -2009, 1533 )
 
 [node name="WalkingAreas" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 34 )
 
 [node name="StoneArea" type="Area2D" parent="WalkingAreas"]
@@ -256,7 +148,9 @@ polygon = PoolVector2Array( 950, 883, 1631, -618, 2540, -1440, 3366, 10, 3040, 1
 position = Vector2( -2114, -635 )
 polygon = PoolVector2Array( 1508, 808, 957, -140, 3062, -215, 3052, 1250, 1724, 1214 )
 
-[connection signal="type_changed" from="WalkingAreas" to="Player/FootstepManager" method="_on_WalkingAreas_type_changed"]
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1656, 596 )
+
 [connection signal="body_entered" from="WalkingAreas/StoneArea" to="WalkingAreas" method="_on_StoneArea_body_entered"]
 [connection signal="body_exited" from="WalkingAreas/StoneArea" to="WalkingAreas" method="_on_StoneArea_body_exited"]
 [connection signal="body_entered" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_entered"]
