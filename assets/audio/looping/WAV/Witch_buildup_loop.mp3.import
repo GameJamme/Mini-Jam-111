@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Witch_buildup_loop.mp3-cadbd25c74c18b820fc8ab324a52a95d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/looping/WAV/Witch_buildup_loop.mp3"
+dest_files=[ "res://.import/Witch_buildup_loop.mp3-cadbd25c74c18b820fc8ab324a52a95d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

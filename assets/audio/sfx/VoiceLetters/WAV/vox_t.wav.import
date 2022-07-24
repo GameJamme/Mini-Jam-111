@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/vox_t.wav-37cd0dbf3b4c22a75238896b76914c47.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/VoiceLetters/WAV/vox_t.wav"
+dest_files=[ "res://.import/vox_t.wav-37cd0dbf3b4c22a75238896b76914c47.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

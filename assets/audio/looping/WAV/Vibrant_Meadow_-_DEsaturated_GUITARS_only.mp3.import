@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Vibrant_Meadow_-_DEsaturated_GUITARS_only.mp3-34d925b1041ccda4537ef8db1cb41b0c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/looping/WAV/Vibrant_Meadow_-_DEsaturated_GUITARS_only.mp3"
+dest_files=[ "res://.import/Vibrant_Meadow_-_DEsaturated_GUITARS_only.mp3-34d925b1041ccda4537ef8db1cb41b0c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

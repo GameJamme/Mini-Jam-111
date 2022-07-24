@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/WAV/sfx_footsteps_stone-007.wav" type="AudioStream" id=1]
+[ext_resource path="res://scripts/OneShotAudio.gd" type="Script" id=2]
+
+[node name="StoneFootstep007" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )
