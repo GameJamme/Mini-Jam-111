@@ -22,7 +22,7 @@
 [ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep008.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep002.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/dialog/SoundBox/SoundBox.gd" type="Script" id=22]
-[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.gd" type="Script" id=23]
+[ext_resource path="res://scripts/FootstepManager.gd" type="Script" id=23]
 
 [node name="FootstepManager" type="Node2D"]
 script = ExtResource( 23 )
