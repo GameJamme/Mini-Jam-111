@@ -65,9 +65,10 @@ anims/WobbleAnimation = ExtResource( 4 )
 script = ExtResource( 7 )
 
 [node name="DialogRunner" type="Node2D" parent="PlayerDialogController"]
+z_index = 1
 script = ExtResource( 5 )
 text_lable_path = NodePath("DialogText")
-dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "I do need this. I do need this.", "I don't need to go this way. I need to get to the cabin..." ]
+dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "I do need this. I do need this.", "I don't need to go this way. I need to get to the cabin...", "I'll ask nicely first.", "Surely he'll grant my wish.", "I'm almost there..." ]
 letter_time = 0.1
 hide_time = 3.0
 random_time_min = 2.0
