@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/ForestPath.png" type="Texture" id=1]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/WitchHut.png" type="Texture" id=2]
@@ -10,15 +10,25 @@
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/SquirrelBehavior.gd" type="Script" id=8]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/VillaMansion.png" type="Texture" id=10]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/OneShotDialog.gd" type="Script" id=11]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/WalkingAreas.gd" type="Script" id=34]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MusicAreas.gd" type="Script" id=35]
 
 [sub_resource type="DynamicFont" id=1]
-size = 24
+outline_size = 1
 font_data = ExtResource( 7 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 123.016
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 60.5, 123.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 138.5, 34.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 224.5, 89.75 )
 
 [node name="Game" type="Node2D"]
 
@@ -67,7 +77,7 @@ idle_flip_max = 3.0
 [node name="DialogRunner" type="Node2D" parent="NPCs/Squirrel"]
 script = ExtResource( 4 )
 text_lable_path = NodePath("DialogText")
-dialogs = [ "tst...", "eep!", "merp?" ]
+dialogs = [ "tst...", "eep!", "merp?", "Where are my nuts?", "I put my nuts here somewhere." ]
 letter_time = 0.1
 hide_time = 3.0
 random = true
@@ -90,6 +100,7 @@ position = Vector2( 1912, 463 )
 texture = ExtResource( 10 )
 
 [node name="BoundingWalls" type="Node2D" parent="."]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BoundingWalls"]
 
@@ -116,6 +127,7 @@ shape = SubResource( 3 )
 polygon = PoolVector2Array( -2078, 1534, -2075, 1473, -1934, 1474, -1934, 1277, -1729, 1279, -1728, 1423, -1642, 1424, -1641, 1586, -1889, 1584, -1890, 1619, -2011, 1621, -2009, 1533 )
 
 [node name="WalkingAreas" type="Node2D" parent="."]
+visible = false
 script = ExtResource( 34 )
 
 [node name="StoneArea" type="Area2D" parent="WalkingAreas"]
@@ -131,6 +143,7 @@ scale = Vector2( 1.10992, 1.03659 )
 polygon = PoolVector2Array( -2137, 1468, -2079, 1467, -2079, 1545, -2137, 1549 )
 
 [node name="MusicAreas" type="Node2D" parent="."]
+visible = false
 script = ExtResource( 35 )
 
 [node name="VibrantMeadow" type="Area2D" parent="MusicAreas"]
@@ -147,6 +160,56 @@ polygon = PoolVector2Array( 950, 883, 1631, -618, 2540, -1440, 3366, 10, 3040, 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicAreas/TownSquare"]
 position = Vector2( -2114, -635 )
 polygon = PoolVector2Array( 1508, 808, 957, -140, 3062, -215, 3052, 1250, 1724, 1214 )
+
+[node name="DialogTriggers" type="Node2D" parent="."]
+
+[node name="Start" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/Start"]
+position = Vector2( 1635, 597 )
+shape = SubResource( 4 )
+
+[node name="OnWayToTown" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown"]
+position = Vector2( 892, 456 )
+shape = SubResource( 4 )
+
+[node name="OnWayToTown2" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown2"]
+position = Vector2( 437, 315 )
+shape = SubResource( 5 )
+
+[node name="OnWayToTown3" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown3"]
+position = Vector2( 107.5, -11.5 )
+shape = SubResource( 6 )
+
+[node name="OnWayToTown4" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown4"]
+position = Vector2( 269, -542 )
+shape = SubResource( 6 )
+
+[node name="OnWayToCabin" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToCabin"]
+position = Vector2( -490, 254.75 )
+shape = SubResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1656, 596 )

@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/player/movement.gd" type="Script" id=1]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MinijamPlayerucus.png" type="Texture" id=2]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/player/Animation/WobbleAnimation.tres" type="Animation" id=4]
+[ext_resource path="res://scenes/dialog/PassiveDialog/PassiveDialog.gd" type="Script" id=5]
+[ext_resource path="res://assets/fonts/black-chancery/BLKCHCRY.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/player/PlayerDialogController.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.5, 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 17
+outline_size = 1
+font_data = ExtResource( 6 )
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 3
@@ -32,3 +40,27 @@ smoothing_speed = 4.0
 anims/WobbleAnimation = ExtResource( 4 )
 
 [node name="FootstepManager" parent="." instance=ExtResource( 3 )]
+
+[node name="PlayerDialogController" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="DialogRunner" type="Node2D" parent="PlayerDialogController"]
+script = ExtResource( 5 )
+text_lable_path = NodePath("DialogText")
+dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "Hopefully they wont see slink off to the cabin.", "I don't need to go this way. I need to get to the cabin..." ]
+letter_time = 0.1
+hide_time = 3.0
+random_time_min = 2.0
+random_time_max = 7.0
+
+[node name="DialogText" type="Label" parent="PlayerDialogController/DialogRunner"]
+margin_left = -252.0
+margin_top = 20.0
+margin_right = 254.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.470588, 0.439216, 0.439216, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
