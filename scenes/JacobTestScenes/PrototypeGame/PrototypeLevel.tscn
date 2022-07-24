@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/ForestPath.png" type="Texture" id=1]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/WitchHut.png" type="Texture" id=2]
@@ -11,6 +11,29 @@
 [ext_resource path="res://scripts/player/movement.gd" type="Script" id=9]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/VillaMansion.png" type="Texture" id=10]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MinijamPlayerucus.png" type="Texture" id=11]
+[ext_resource path="res://scenes/dialog/SoundBox/SoundBox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep001.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep006.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep002.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep004.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep004.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep001.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep008.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep005.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep005.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep007.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep001.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep002.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep006.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep003.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep004.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep005.tscn" type="PackedScene" id=28]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep006.tscn" type="PackedScene" id=29]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep002.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep003.tscn" type="PackedScene" id=31]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep003.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.gd" type="Script" id=33]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/WalkingAreas.gd" type="Script" id=34]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -18,6 +41,52 @@ font_data = ExtResource( 7 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9.5, 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Wobble"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0503002, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -5 ), Vector2( 0, -2 ), Vector2( 0, -3 ), Vector2( 0, -5 ), Vector2( 0, -3 ), Vector2( 0, -2 ), Vector2( 0, -5 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0503002, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0252, 20.0, 10.0252, 0.0, -10.0, -20.0, -10.0, 0.0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("FootstepManager")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_step"
+}, {
+"args": [  ],
+"method": "on_step"
+} ]
+}
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 123.016
@@ -110,7 +179,23 @@ process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 4.0
 
+[node name="WalkingAnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/Wobble = SubResource( 4 )
+
+[node name="FootstepManager" type="Node2D" parent="Player"]
+script = ExtResource( 33 )
+
+[node name="WoodFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
+SFX_scenes = [ ExtResource( 13 ), ExtResource( 15 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 25 ) ]
+
+[node name="StoneFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
+SFX_scenes = [ ExtResource( 18 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 19 ) ]
+
+[node name="GrassFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
+SFX_scenes = [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ]
+
 [node name="BoundingWalls" type="Node2D" parent="."]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BoundingWalls"]
 
@@ -119,7 +204,7 @@ polygon = PoolVector2Array( 951, 1041, 953, 571, 1090, 571, 1089, 725, 1590, 727
 
 [node name="InvisableWall3" type="CollisionPolygon2D" parent="BoundingWalls/StaticBody2D"]
 position = Vector2( -1387, -324 )
-polygon = PoolVector2Array( -366, 682, 951.721, 703.138, 953, 571, 1090, 571, 1089, 725, 1155, 867, 1167, 741, 1265, 706, 1320, 731, 1443, 738, 1446, 537, 1720, 531, 1720, 824, 1756, 864, 1918, 865, 2396, 900, 2361, 1311, 835, 2012, -167, 2052, -163.203, 1389.69, -360, 1267 )
+polygon = PoolVector2Array( -366, 682, 951.721, 703.138, 991, 690, 1026, 689, 1089, 725, 1155, 867, 1167, 741, 1265, 706, 1320, 731, 1443, 738, 1446, 537, 1720, 531, 1720, 824, 1756, 864, 1918, 865, 2396, 900, 2361, 1311, 835, 2012, 43, 2262, -1143, 2054, -167, 2052, -163.203, 1389.69, -360, 1267 )
 
 [node name="InvisableWall2" type="CollisionPolygon2D" parent="BoundingWalls/StaticBody2D"]
 position = Vector2( 247, -348 )
@@ -127,8 +212,32 @@ polygon = PoolVector2Array( 1436, 562, 847, 559, 845, 740, 705, 740, 572, 688, 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoundingWalls/StaticBody2D"]
 position = Vector2( -686, -756 )
-polygon = PoolVector2Array( 857, 183, 774, 425, 781, 746, 574, 752, 569, 708, -137, 713, -156, 817, -294, 841, -346, 985, -465, 958, -521, 901, -620, 984, -692, 888, -754, 886, -790, 987, -886, 911, -963, 994, -1026, 970, -1051, 877, -1128, 954, -1259, 961, -1253, 1710, -1431, 1720, -1627, 1717, -1635, 2233, -1450, 2233, -1453, 2295, -1634, 2293, -1634, 2482, -2275, 2877, -2615, 2079, -1642, -17, -416, -21 )
+polygon = PoolVector2Array( 857, 183, 774, 425, 781, 746, 574, 752, 569, 708, -137, 713, -156, 817, -294, 841, -346, 985, -465, 958, -521, 901, -620, 984, -692, 888, -754, 886, -790, 987, -886, 911, -963, 994, -1026, 970, -1051, 877, -1128, 954, -1259, 961, -1253, 1710, -1431, 1720, -1627, 1717, -1635, 2233, -1450, 2233, -1453, 2295, -1634, 2293, -1634, 2482, -2275, 2877, -2615, 2079, -1642, -17, -416, -21, 1271, -103, 1230, 182 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoundingWalls/StaticBody2D"]
 position = Vector2( 1335, 471 )
 shape = SubResource( 3 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BoundingWalls/StaticBody2D"]
+polygon = PoolVector2Array( -2078, 1534, -2075, 1473, -1934, 1474, -1934, 1277, -1729, 1279, -1728, 1423, -1642, 1424, -1641, 1586, -1889, 1584, -1890, 1619, -2011, 1621, -2009, 1533 )
+
+[node name="WalkingAreas" type="Node2D" parent="."]
+script = ExtResource( 34 )
+
+[node name="StoneArea" type="Area2D" parent="WalkingAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WalkingAreas/StoneArea"]
+polygon = PoolVector2Array( 2930, 101, 962, 135, 953, 437, 519, 437, 519, 59, 325, 49, 330, -642, 224, -639, 237, 41, -149, 54, -144, 249, -1876, 246, -1883, 1008, -2071, 1017, -2078, 1305, -1987, 1312, -1990, 1103, -1802, 1098, -1788, 327, -63, 337, -56, 149, 429, 139, 429, 513, 948, 525, 983, 1088, 3093, 1100 )
+
+[node name="WoodArea" type="Area2D" parent="WalkingAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WalkingAreas/WoodArea"]
+position = Vector2( 232.203, -55.1709 )
+scale = Vector2( 1.10992, 1.03659 )
+polygon = PoolVector2Array( -2137, 1468, -2079, 1467, -2079, 1545, -2137, 1549 )
+
+[connection signal="type_changed" from="WalkingAreas" to="Player/FootstepManager" method="_on_WalkingAreas_type_changed"]
+[connection signal="body_entered" from="WalkingAreas/StoneArea" to="WalkingAreas" method="_on_StoneArea_body_entered"]
+[connection signal="body_exited" from="WalkingAreas/StoneArea" to="WalkingAreas" method="_on_StoneArea_body_exited"]
+[connection signal="body_entered" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_entered"]
+[connection signal="body_exited" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_exited"]
