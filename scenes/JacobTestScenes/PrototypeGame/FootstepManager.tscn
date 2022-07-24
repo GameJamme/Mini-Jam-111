@@ -1,0 +1,40 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep001.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep002.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep005.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep005.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep004.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep006.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep003.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep003.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep002.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/dialog/SoundBox/SoundBox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep004.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep001.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep003.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep006.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep005.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep007.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep001.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep006.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep004.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep008.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep002.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/dialog/SoundBox/SoundBox.gd" type="Script" id=22]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.gd" type="Script" id=23]
+
+[node name="FootstepManager" type="Node2D"]
+script = ExtResource( 23 )
+
+[node name="WoodFootsteps" type="Node2D" parent="." instance=ExtResource( 10 )]
+script = ExtResource( 22 )
+SFX_scenes = [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 14 ) ]
+
+[node name="StoneFootsteps" type="Node2D" parent="." instance=ExtResource( 10 )]
+script = ExtResource( 22 )
+SFX_scenes = [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 3 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 20 ) ]
+
+[node name="GrassFootsteps" type="Node2D" parent="." instance=ExtResource( 10 )]
+script = ExtResource( 22 )
+SFX_scenes = [ ExtResource( 1 ), ExtResource( 21 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 6 ) ]

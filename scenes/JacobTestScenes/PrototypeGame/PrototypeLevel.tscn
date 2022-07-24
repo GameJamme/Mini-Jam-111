@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/ForestPath.png" type="Texture" id=1]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/WitchHut.png" type="Texture" id=2]
@@ -8,89 +8,28 @@
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Animals/TreeRat.png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/black-chancery/BLKCHCRY.TTF" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/SquirrelBehavior.gd" type="Script" id=8]
-[ext_resource path="res://scripts/player/movement.gd" type="Script" id=9]
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/VillaMansion.png" type="Texture" id=10]
-[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MinijamPlayerucus.png" type="Texture" id=11]
-[ext_resource path="res://scenes/dialog/SoundBox/SoundBox.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep001.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep006.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep002.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep004.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep004.tscn" type="PackedScene" id=17]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep001.tscn" type="PackedScene" id=18]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep008.tscn" type="PackedScene" id=19]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep005.tscn" type="PackedScene" id=20]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep005.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep007.tscn" type="PackedScene" id=22]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep001.tscn" type="PackedScene" id=23]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep002.tscn" type="PackedScene" id=24]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep006.tscn" type="PackedScene" id=25]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep003.tscn" type="PackedScene" id=26]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep004.tscn" type="PackedScene" id=27]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep005.tscn" type="PackedScene" id=28]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep006.tscn" type="PackedScene" id=29]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Stone/Prafabs/StoneFootstep002.tscn" type="PackedScene" id=30]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Grass/Prafabs/GrassFootstep003.tscn" type="PackedScene" id=31]
-[ext_resource path="res://assets/audio/sfx/Footsteps/Wood/Prafabs/WoodFootstep003.tscn" type="PackedScene" id=32]
-[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.gd" type="Script" id=33]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/OneShotDialog.gd" type="Script" id=11]
+[ext_resource path="res://assets/audio/sfx/Doors/Prefabs/DoorSFXGood.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/WalkingAreas.gd" type="Script" id=34]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MusicAreas.gd" type="Script" id=35]
 
 [sub_resource type="DynamicFont" id=1]
-size = 24
+outline_size = 1
 font_data = ExtResource( 7 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9.5, 5 )
-
-[sub_resource type="Animation" id=4]
-resource_name = "Wobble"
-length = 0.4
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0503002, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -5 ), Vector2( 0, -2 ), Vector2( 0, -3 ), Vector2( 0, -5 ), Vector2( 0, -3 ), Vector2( 0, -2 ), Vector2( 0, -5 ), Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0503002, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 10.0252, 20.0, 10.0252, 0.0, -10.0, -20.0, -10.0, 0.0 ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("FootstepManager")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [  ],
-"method": "on_step"
-}, {
-"args": [  ],
-"method": "on_step"
-} ]
-}
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 123.016
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 60.5, 268.25 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 138.5, 34.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 224.5, 89.75 )
 
 [node name="Game" type="Node2D"]
 
@@ -122,6 +61,10 @@ texture = ExtResource( 2 )
 position = Vector2( -1544, 480 )
 texture = ExtResource( 1 )
 
+[node name="VillaMansion" type="Sprite" parent="GroundTop"]
+position = Vector2( 1912, 463 )
+texture = ExtResource( 10 )
+
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="Squirrel" type="Sprite" parent="NPCs"]
@@ -139,7 +82,7 @@ idle_flip_max = 3.0
 [node name="DialogRunner" type="Node2D" parent="NPCs/Squirrel"]
 script = ExtResource( 4 )
 text_lable_path = NodePath("DialogText")
-dialogs = [ "tst...", "eep!", "merp?" ]
+dialogs = [ "tst...", "eep!", "merp?", "Where are my nuts?", "I put my nuts here somewhere.", "ANY size pizza can be a personal pizza if you truly believe in yourself." ]
 letter_time = 0.1
 hide_time = 3.0
 random = true
@@ -156,44 +99,6 @@ custom_colors/font_outline_modulate = Color( 0.470588, 0.439216, 0.439216, 1 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
-
-[node name="VillaMansion" type="Sprite" parent="."]
-position = Vector2( 1912, 463 )
-texture = ExtResource( 10 )
-
-[node name="Player" type="KinematicBody2D" parent="." groups=["player"]]
-position = Vector2( 1626, 490 )
-script = ExtResource( 9 )
-move_speed = 100
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0.5, 11 )
-shape = SubResource( 2 )
-
-[node name="SmoothFollowCamera" type="Camera2D" parent="Player"]
-current = true
-zoom = Vector2( 0.5, 0.5 )
-process_mode = 0
-smoothing_enabled = true
-smoothing_speed = 4.0
-
-[node name="WalkingAnimationPlayer" type="AnimationPlayer" parent="Player"]
-anims/Wobble = SubResource( 4 )
-
-[node name="FootstepManager" type="Node2D" parent="Player"]
-script = ExtResource( 33 )
-
-[node name="WoodFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
-SFX_scenes = [ ExtResource( 13 ), ExtResource( 15 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 25 ) ]
-
-[node name="StoneFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
-SFX_scenes = [ ExtResource( 18 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 19 ) ]
-
-[node name="GrassFootsteps" parent="Player/FootstepManager" instance=ExtResource( 12 )]
-SFX_scenes = [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ]
 
 [node name="BoundingWalls" type="Node2D" parent="."]
 visible = false
@@ -239,6 +144,7 @@ scale = Vector2( 1.10992, 1.03659 )
 polygon = PoolVector2Array( -2137, 1468, -2079, 1467, -2079, 1545, -2137, 1549 )
 
 [node name="MusicAreas" type="Node2D" parent="."]
+visible = false
 script = ExtResource( 35 )
 
 [node name="VibrantMeadow" type="Area2D" parent="MusicAreas"]
@@ -256,7 +162,62 @@ polygon = PoolVector2Array( 950, 883, 1631, -618, 2540, -1440, 3366, 10, 3040, 1
 position = Vector2( -2114, -635 )
 polygon = PoolVector2Array( 1508, 808, 957, -140, 3062, -215, 3052, 1250, 1724, 1214 )
 
-[connection signal="type_changed" from="WalkingAreas" to="Player/FootstepManager" method="_on_WalkingAreas_type_changed"]
+[node name="DialogTriggers" type="Node2D" parent="."]
+
+[node name="Start" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/Start"]
+position = Vector2( 1540, 463.25 )
+shape = SubResource( 4 )
+
+[node name="OnWayToTown" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown"]
+position = Vector2( 892, 456 )
+shape = SubResource( 4 )
+
+[node name="OnWayToTown2" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown2"]
+position = Vector2( 437, 315 )
+shape = SubResource( 5 )
+
+[node name="OnWayToTown3" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown3"]
+position = Vector2( 107.5, -11.5 )
+shape = SubResource( 6 )
+
+[node name="OnWayToTown4" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToTown4"]
+position = Vector2( 269, -542 )
+shape = SubResource( 6 )
+
+[node name="OnWayToCabin" type="Area2D" parent="DialogTriggers"]
+script = ExtResource( 11 )
+dialog_index = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/OnWayToCabin"]
+position = Vector2( -490, 254.75 )
+shape = SubResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1656, 596 )
+move_speed = 100
+
+[node name="DoorSFXGood" parent="." instance=ExtResource( 12 )]
+
 [connection signal="body_entered" from="WalkingAreas/StoneArea" to="WalkingAreas" method="_on_StoneArea_body_entered"]
 [connection signal="body_exited" from="WalkingAreas/StoneArea" to="WalkingAreas" method="_on_StoneArea_body_exited"]
 [connection signal="body_entered" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_entered"]

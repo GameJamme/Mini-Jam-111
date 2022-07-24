@@ -1,12 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/player/movement.gd" type="Script" id=1]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MinijamPlayerucus.png" type="Texture" id=2]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/player/Animation/WobbleAnimation.tres" type="Animation" id=4]
+[ext_resource path="res://scenes/dialog/PassiveDialog/PassiveDialog.gd" type="Script" id=5]
+[ext_resource path="res://assets/fonts/black-chancery/BLKCHCRY.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/player/PlayerDialogController.gd" type="Script" id=7]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise012.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise017.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise018.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise011.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise015.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise013.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise016.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise014.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/dialog/SoundBox/SoundBox.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise008.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise009.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise010.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise002.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise003.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise004.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise001.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise005.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise006.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise007.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/player/LetterSoundController.gd" type="Script" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.5, 5 )
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="DynamicFont" id=2]
+size = 17
+outline_size = 1
+font_data = ExtResource( 6 )
+
+[node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 1 )
@@ -25,3 +55,39 @@ process_mode = 0
 limit_smoothed = true
 smoothing_enabled = true
 smoothing_speed = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/WobbleAnimation = ExtResource( 4 )
+
+[node name="FootstepManager" parent="." instance=ExtResource( 3 )]
+
+[node name="PlayerDialogController" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="DialogRunner" type="Node2D" parent="PlayerDialogController"]
+script = ExtResource( 5 )
+text_lable_path = NodePath("DialogText")
+dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "I do need this. I do need this.", "I don't need to go this way. I need to get to the cabin..." ]
+letter_time = 0.1
+hide_time = 3.0
+random_time_min = 2.0
+random_time_max = 7.0
+
+[node name="DialogText" type="Label" parent="PlayerDialogController/DialogRunner"]
+margin_left = -252.0
+margin_top = 20.0
+margin_right = 254.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.470588, 0.439216, 0.439216, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="LetterSoundController" type="Node2D" parent="."]
+script = ExtResource( 27 )
+dialog_path = NodePath("../PlayerDialogController/DialogRunner")
+
+[node name="LetterSoundBox" parent="LetterSoundController" instance=ExtResource( 16 )]
+SFX_scenes = [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 10 ) ]
