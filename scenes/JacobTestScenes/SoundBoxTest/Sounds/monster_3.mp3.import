@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/monster_3.mp3-a5be022d71a0d59cdb9c5b29d9912c79.mp3str"
+
+[deps]
+
+source_file="res://scenes/JacobTestScenes/SoundBoxTest/Sounds/monster_3.mp3"
+dest_files=[ "res://.import/monster_3.mp3-a5be022d71a0d59cdb9c5b29d9912c79.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
