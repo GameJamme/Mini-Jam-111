@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_footsteps_grass-006.wav-11f50c95eb1b783048e39f459e8299cf.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Footsteps/Grass/WAV/sfx_footsteps_grass-006.wav"
+dest_files=[ "res://.import/sfx_footsteps_grass-006.wav-11f50c95eb1b783048e39f459e8299cf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

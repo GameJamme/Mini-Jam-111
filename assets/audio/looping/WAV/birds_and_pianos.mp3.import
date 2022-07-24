@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/birds_and_pianos.mp3-812d9229872c7e34652f78cf26cf5d1f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/looping/WAV/birds_and_pianos.mp3"
+dest_files=[ "res://.import/birds_and_pianos.mp3-812d9229872c7e34652f78cf26cf5d1f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

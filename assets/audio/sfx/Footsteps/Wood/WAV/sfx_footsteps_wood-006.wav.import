@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_footsteps_wood-006.wav-3a64fe9519b298cc0293fe73c7ecd6aa.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Footsteps/Wood/WAV/sfx_footsteps_wood-006.wav"
+dest_files=[ "res://.import/sfx_footsteps_wood-006.wav-3a64fe9519b298cc0293fe73c7ecd6aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
