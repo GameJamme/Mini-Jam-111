@@ -1,0 +1,153 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/rooms/room.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 274, 180 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 400.5, 300 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 454.875, 204 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 273, 208.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 492, 316.25 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 573, 267.125 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 573, 206.563 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 384, 384 )
+
+[node name="Rooms" type="Node2D"]
+
+[node name="DefaultRoom" type="Area2D" parent="."]
+position = Vector2( 332, 955 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DefaultRoom"]
+shape = SubResource( 6 )
+
+[node name="Room2" type="Area2D" parent="."]
+position = Vector2( 1353, 468 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2"]
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Room3" type="Area2D" parent="."]
+position = Vector2( 492, 370 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3"]
+shape = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Room4" type="Area2D" parent="."]
+position = Vector2( 307, -49 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room4"]
+shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Room5" type="Area2D" parent="."]
+position = Vector2( 307, -49 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room5"]
+shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Room6" type="Area2D" parent="."]
+position = Vector2( -468, 258 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room6"]
+shape = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Room7" type="Area2D" parent="."]
+position = Vector2( -1540, 272 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room7"]
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Room8" type="Area2D" parent="."]
+position = Vector2( -1544, 750 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room8"]
+shape = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Room9" type="Area2D" parent="."]
+position = Vector2( -1937, 1345 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room9"]
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="body_entered" from="DefaultRoom" to="DefaultRoom" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="DefaultRoom" to="DefaultRoom" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room2" to="Room2" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room2" to="Room2" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room3" to="Room3" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room3" to="Room3" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room4" to="Room4" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room4" to="Room4" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room5" to="Room5" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room5" to="Room5" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room6" to="Room6" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room6" to="Room6" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room7" to="Room7" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room7" to="Room7" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room8" to="Room8" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room8" to="Room8" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Room9" to="Room9" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Room9" to="Room9" method="_on_Area2D_body_exited"]
