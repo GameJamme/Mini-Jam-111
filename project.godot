@@ -9,15 +9,30 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "DialogSoundBox",
+"language": "GDScript",
+"path": "res://scenes/dialog/DialogSoundBox/DialogSoundBox.gd"
+}, {
 "base": "Sprite",
 "class": "Drainable",
 "language": "GDScript",
 "path": "res://scripts/Drainable.gd"
 }, {
+"base": "Node",
+"class": "MusicPlayer",
+"language": "GDScript",
+"path": "res://scenes/Autoload/MusicPlayer/MusicPlayer.gd"
+}, {
+"base": "AudioStreamPlayer2D",
+"class": "OneShotAudio",
+"language": "GDScript",
+"path": "res://scripts/OneShotAudio.gd"
+}, {
 "base": "Node2D",
 "class": "PassiveDialog",
 "language": "GDScript",
-"path": "res://scenes/JacobTestScenes/DialogTest/PassiveDialog.gd"
+"path": "res://scenes/dialog/PassiveDialog/PassiveDialog.gd"
 }, {
 "base": "Reference",
 "class": "SceneData",
@@ -35,7 +50,10 @@ _global_script_classes=[ {
 "path": "res://addons/game-template/transition/transition.gd"
 } ]
 _global_script_class_icons={
+"DialogSoundBox": "",
 "Drainable": "",
+"MusicPlayer": "",
+"OneShotAudio": "",
 "PassiveDialog": "",
 "SceneData": "",
 "Scenes": "",

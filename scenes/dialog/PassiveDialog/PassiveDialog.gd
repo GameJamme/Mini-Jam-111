@@ -23,6 +23,7 @@ var hide_timer : Timer = Timer.new()
 
 signal dialog_started(dialog)
 signal letter_typed(letter)
+signal dialog_completed
 
 var _coroutine
 
@@ -83,6 +84,7 @@ func _run_dialog_coroutine():
 
 func _on_hide_timer_timeout():
 	_set_text("")
+	emit_signal("dialog_completed")
 	if random:
 		random_timer.start(_get_random_time())
 

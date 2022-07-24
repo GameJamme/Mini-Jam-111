@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Vibrant_Meadow_.mp3-776c00614f548f5f9457a1a3c1a78fcc.mp3str"
+
+[deps]
+
+source_file="res://scenes/JacobTestScenes/BackgroundMusicTesting/Vibrant_Meadow_.mp3"
+dest_files=[ "res://.import/Vibrant_Meadow_.mp3-776c00614f548f5f9457a1a3c1a78fcc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
