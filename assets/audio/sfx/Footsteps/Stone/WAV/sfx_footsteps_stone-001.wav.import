@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_footsteps_stone-001.wav-8e9e7452caad9df4c4ae9ee6a5f26a18.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Footsteps/Stone/WAV/sfx_footsteps_stone-001.wav"
+dest_files=[ "res://.import/sfx_footsteps_stone-001.wav-8e9e7452caad9df4c4ae9ee6a5f26a18.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

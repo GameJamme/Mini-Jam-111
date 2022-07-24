@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Witch_-_Curse_of_Colors.mp3-c6fb26319fd01020ca527b8619317af0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/looping/WAV/Witch_-_Curse_of_Colors.mp3"
+dest_files=[ "res://.import/Witch_-_Curse_of_Colors.mp3-c6fb26319fd01020ca527b8619317af0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Vibrant_Meadow_-_DEsaturated.mp3-385d0c30d820f3997b4575c614f24f0a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/looping/WAV/Vibrant_Meadow_-_DEsaturated.mp3"
+dest_files=[ "res://.import/Vibrant_Meadow_-_DEsaturated.mp3-385d0c30d820f3997b4575c614f24f0a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
