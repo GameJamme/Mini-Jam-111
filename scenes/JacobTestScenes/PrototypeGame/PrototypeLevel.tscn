@@ -77,7 +77,7 @@ idle_flip_max = 3.0
 [node name="DialogRunner" type="Node2D" parent="NPCs/Squirrel"]
 script = ExtResource( 4 )
 text_lable_path = NodePath("DialogText")
-dialogs = [ "tst...", "eep!", "merp?", "Where are my nuts?", "I put my nuts here somewhere." ]
+dialogs = [ "tst...", "eep!", "merp?", "Where are my nuts?", "I put my nuts here somewhere.", "ANY size pizza can be a personal pizza if you truly believe in yourself." ]
 letter_time = 0.1
 hide_time = 3.0
 random = true
