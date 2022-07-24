@@ -44,6 +44,21 @@ func start(track_name : String):
 	_blend()
 
 
+func start_no_blend(track_name : String):
+	if not tracks.has(track_name):
+		return
+	
+	#force the blend to complete so we can start a new one
+	if not next_tween_complete or not current_tween_complete:
+		next_tween_complete = true
+		current_tween_complete = true
+		_try_finish_blend()
+	
+	if current_music != null:
+		current_music.queue_free()
+	current_music = tracks.get(track_name).instance()
+	add_child(current_music)
+
 func _blend():
 	if current_music != null:
 		current_tween.interpolate_property(current_music, "volume_db",
