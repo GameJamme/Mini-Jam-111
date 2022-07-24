@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/ForestPath.png" type="Texture" id=1]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/WitchHut.png" type="Texture" id=2]
+[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/Terrain/Village.png" type="Texture" id=3]
+
+[node name="Game" type="Node2D"]
+
+[node name="GroundTop" type="Node2D" parent="."]
+
+[node name="VillageOutskirts" type="Sprite" parent="GroundTop"]
+position = Vector2( -8, 0 )
+texture = ExtResource( 3 )
+
+[node name="WitchCabin" type="Sprite" parent="GroundTop"]
+position = Vector2( -1937, 1344 )
+texture = ExtResource( 2 )
+
+[node name="ForestPath" type="Sprite" parent="GroundTop"]
+position = Vector2( -1544, 480 )
+texture = ExtResource( 1 )
