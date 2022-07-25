@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/player/movement.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/MinijamPlayerucus.png" type="Texture" id=2]
@@ -28,13 +28,31 @@
 [ext_resource path="res://assets/audio/sfx/VoiceLetters/Prefabs/LetterNoise007.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scenes/player/LetterSoundController.gd" type="Script" id=27]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 9.5, 16 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 17
 outline_size = 1
 font_data = ExtResource( 6 )
+
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+
+uniform vec4 color : hint_color;
+uniform float multiplier = 0.2;
+uniform float softness = 0.2;
+
+void fragment(){
+	float value = distance(UV, vec2(0.5));
+	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/color = null
+shader_param/multiplier = 0.409
+shader_param/softness = 0.697
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 3
@@ -46,7 +64,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -68,7 +86,7 @@ script = ExtResource( 7 )
 z_index = 1
 script = ExtResource( 5 )
 text_lable_path = NodePath("DialogText")
-dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "I do need this. I do need this.", "I don't need to go this way. I need to get to the cabin...", "I'll ask nicely first.", "Surely he'll grant my wish.", "I'm almost there..." ]
+dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "I do need this. I do need this.", "I don't need to go this way. I need to get to the cabin...", "I'll ask nicely first.", "Surely he'll grant my wish.", "I'm almost there...", "So.... Hungry.", "Need... More.", "Green.. Yellow..", "Red... Blue...", "Family... gone...", "I must Exile... or Death...", "Home... Need Home...", "Color! More MORE!", "" ]
 letter_time = 0.1
 hide_time = 3.0
 random_time_min = 2.0
@@ -92,3 +110,11 @@ dialog_path = NodePath("../PlayerDialogController/DialogRunner")
 
 [node name="LetterSoundBox" parent="LetterSoundController" instance=ExtResource( 16 )]
 SFX_scenes = [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 10 ) ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
