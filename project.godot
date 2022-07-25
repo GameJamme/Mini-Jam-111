@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "FootstepManager",
 "language": "GDScript",
-"path": "res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.gd"
+"path": "res://scripts/FootstepManager.gd"
 }, {
 "base": "Node",
 "class": "MusicPlayer",

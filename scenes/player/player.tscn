@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/player/movement.gd" type="Script" id=1]
-[ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/MinijamPlayerucus.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/MinijamPlayerucus.png" type="Texture" id=2]
 [ext_resource path="res://scenes/JacobTestScenes/PrototypeGame/FootstepManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/player/Animation/WobbleAnimation.tres" type="Animation" id=4]
 [ext_resource path="res://scenes/dialog/PassiveDialog/PassiveDialog.gd" type="Script" id=5]
@@ -29,7 +29,7 @@
 [ext_resource path="res://scenes/player/LetterSoundController.gd" type="Script" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.5, 5 )
+extents = Vector2( 9.5, 16 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 17
@@ -45,7 +45,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 11 )
+position = Vector2( 0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -65,9 +65,10 @@ anims/WobbleAnimation = ExtResource( 4 )
 script = ExtResource( 7 )
 
 [node name="DialogRunner" type="Node2D" parent="PlayerDialogController"]
+z_index = 1
 script = ExtResource( 5 )
 text_lable_path = NodePath("DialogText")
-dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "I do need this. I do need this.", "I don't need to go this way. I need to get to the cabin..." ]
+dialogs = [ "A good day to finally get what I need.", "I need this power.", "Once I have this blessing I can make anything.", "The villagers must be at the market by now.", "I do need this. I do need this.", "I don't need to go this way. I need to get to the cabin...", "I'll ask nicely first.", "Surely he'll grant my wish.", "I'm almost there..." ]
 letter_time = 0.1
 hide_time = 3.0
 random_time_min = 2.0
