@@ -59,7 +59,7 @@ func _death():
 	dead = true
 	
 	if dead and not death_allowed:
-		Game.change_scene("res://scenes/Act3/Act3.tscn")
+		Game.change_scene("res://scenes/Dead/dead.tscn")
 	elif dead and death_allowed:
 		pass #death ending
 
