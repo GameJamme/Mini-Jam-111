@@ -20,9 +20,9 @@ var hp = 100
 var color_consumed : bool = false
 
 var cabin_consume_time : float = 10.0
-var forest_path_consume_time : float = 15.0
-var town_consume_time : float = 15.0
-var villa_consume_time : float = 15.0
+var forest_path_consume_time : float = 20.0
+var town_consume_time : float = 30.0
+var villa_consume_time : float = 20.0
 
 var current_area : int = -1
 
