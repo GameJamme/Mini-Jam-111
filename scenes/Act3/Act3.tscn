@@ -241,7 +241,6 @@ position = Vector2( -3756, 606 )
 polygon = PoolVector2Array( 950, 883, 1631, -618, 3650, -1683, 3643, -26, 3040, 1238, 927, 1184 )
 
 [node name="DialogTriggers" type="Node2D" parent="."]
-visible = false
 
 [node name="9" type="Area2D" parent="DialogTriggers"]
 script = ExtResource( 11 )
@@ -455,6 +454,7 @@ shape = SubResource( 13 )
 [connection signal="body_entered" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_entered"]
 [connection signal="body_exited" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_exited"]
 [connection signal="body_entered" from="MusicAreas/VibrantMeadowCursed" to="MusicAreas" method="_on_VibrantMeadowCursed_body_entered"]
+[connection signal="body_entered" from="DialogTriggers/14" to="." method="_on_14_body_entered"]
 [connection signal="body_entered" from="DrainAreas/CabinArea" to="." method="_on_CabinArea_body_entered"]
 [connection signal="body_entered" from="DrainAreas/ForestPath" to="." method="_on_ForestPath_body_entered"]
 [connection signal="body_entered" from="DrainAreas/Town" to="." method="_on_Town_body_entered"]

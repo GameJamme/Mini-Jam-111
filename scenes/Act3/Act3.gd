@@ -61,7 +61,7 @@ func _death():
 	if dead and not death_allowed:
 		Game.change_scene("res://scenes/Dead/dead.tscn")
 	elif dead and death_allowed:
-		pass #death ending
+		Game.change_scene("res://scenes/Act4/Act4.tscn")
 
 
 func _update_vignette():
@@ -113,3 +113,8 @@ func _drain_texture(ground, top, delta) -> bool:
 	top.modulate.a -= delta / forest_path_consume_time
 
 	return true
+
+
+func _on_14_body_entered(body):
+	if body.is_in_group("player"):
+		death_allowed = true
