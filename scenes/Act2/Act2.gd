@@ -9,10 +9,15 @@ onready var player_dialog : PassiveDialog = get_node(wizard_dialog_path)
 var encounter_1 : bool = true
 var encounter_2 : bool = false
 var cursed : bool = false
+var can_leave : bool = false
 
 func _ready():
 	MusicPlayerManager.start("CurseBuildup")
 
+
+func _physics_process(delta):
+	if cursed:
+		$WitchHutIntiriour.on_drain_tick($Player.position, 30, delta)
 
 func _drop_curse():
 	MusicPlayerManager.start_no_blend("CurseOfColors")
@@ -56,7 +61,7 @@ func encounter_2():
 	wizard_dialog.run_dialog_custom("Hopefully this will teach you...")
 	yield(wizard_dialog, "dialog_completed")
 	wizard_dialog.run_dialog_custom("GO NOW")
-	cursed = true
+	can_leave = true
 	yield(wizard_dialog, "dialog_completed")
 	wizard_dialog.run_dialog_custom("I'm busy doing my taxes.")
 	yield(wizard_dialog, "dialog_completed")
@@ -64,10 +69,11 @@ func encounter_2():
 
 
 func _change_appearance():
+	cursed = true
 	$Player/Sprite.visible = false
 	$Player/cursed.visible = true
 
 
 func _on_ToAct3_body_entered(body):
-	if cursed and body.is_in_group("player"):
+	if can_leave and body.is_in_group("player"):
 		Game.change_scene("res://scenes/Act3/Act3.tscn")
