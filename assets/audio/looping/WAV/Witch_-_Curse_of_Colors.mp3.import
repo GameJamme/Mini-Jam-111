@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Witch_-_Curse_of_Colors.mp3-c6fb26319fd01020ca527b86
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

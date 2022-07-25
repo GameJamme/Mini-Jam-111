@@ -65,6 +65,15 @@ func run_dialog(dialog_index : int):
 	_run_dialog_coroutine()
 
 
+func run_dialog_custom(custom_dialog : String):
+	_current_dialog = custom_dialog
+	_screen_text = ""
+	
+	emit_signal("dialog_started", _current_dialog)
+	
+	_dialog_count += 1
+	_run_dialog_coroutine()
+
 func has_dialog(dialog_index : int) -> bool:
 	return dialog_index >= 0 or dialog_index < num_of_dialogs()
 
