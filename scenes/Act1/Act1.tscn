@@ -139,23 +139,12 @@ scale = Vector2( 1.10992, 1.03659 )
 polygon = PoolVector2Array( -2137, 1468, -2079, 1467, -2079, 1545, -2137, 1549 )
 
 [node name="MusicAreas" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 35 )
 
 [node name="VibrantMeadow" type="Area2D" parent="MusicAreas"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicAreas/VibrantMeadow"]
 polygon = PoolVector2Array( 950, 883, 957, -140, 3046, -213, 3040, 1238, 927, 1184 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="MusicAreas/VibrantMeadow"]
-position = Vector2( -3756, 606 )
-polygon = PoolVector2Array( 950, 883, 1631, -618, 2540, -1440, 3366, 10, 3040, 1238, 927, 1184 )
-
-[node name="TownSquare" type="Area2D" parent="MusicAreas"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicAreas/TownSquare"]
-position = Vector2( -2114, -635 )
-polygon = PoolVector2Array( 1508, 808, 957, -140, 3062, -215, 3052, 1250, 1724, 1214 )
 
 [node name="DialogTriggers" type="Node2D" parent="."]
 visible = false
@@ -271,5 +260,4 @@ polygon = PoolVector2Array( -2129, 1556, -2128, 1575, -2048, 1576, -2049, 1557 )
 [connection signal="body_entered" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_entered"]
 [connection signal="body_exited" from="WalkingAreas/WoodArea" to="WalkingAreas" method="_on_WoodArea_body_exited"]
 [connection signal="body_entered" from="MusicAreas/VibrantMeadow" to="MusicAreas" method="_on_VibrantMeadow_body_entered"]
-[connection signal="body_entered" from="MusicAreas/TownSquare" to="MusicAreas" method="_on_TownSquare_body_entered"]
 [connection signal="body_entered" from="NextActTrigger" to="NextActTrigger" method="_on_NextActTrigger_body_entered"]
