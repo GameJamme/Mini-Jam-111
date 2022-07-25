@@ -19,8 +19,8 @@ var hp = 100
 
 var color_consumed : bool = false
 
-var cabin_consume_time : float = 10.0
-var forest_path_consume_time : float = 20.0
+var cabin_consume_time : float = 20.0
+var forest_path_consume_time : float = 25.0
 var town_consume_time : float = 30.0
 var villa_consume_time : float = 20.0
 
@@ -92,25 +92,25 @@ func _on_Villa_body_entered(body):
 func _drain_current_area(delta : float) -> bool:
 	match(current_area):
 		MapAreas.ForestPath:
-			return _drain_texture($GroundLayer/ForestPath, $TopLayer/ForestPathStuffLayer, delta)
+			return _drain_texture($GroundLayer/ForestPath, $TopLayer/ForestPathStuffLayer, delta, forest_path_consume_time)
 		
 		MapAreas.Cabin:
-			return _drain_texture($GroundLayer/Cabin, $TopLayer/Cabin, delta)
+			return _drain_texture($GroundLayer/Cabin, $TopLayer/Cabin, delta, cabin_consume_time)
 		
 		MapAreas.Villa:
-			return _drain_texture($GroundLayer/Villa, $TopLayer/Villa, delta)
+			return _drain_texture($GroundLayer/Villa, $TopLayer/Villa, delta, villa_consume_time)
 		
 		MapAreas.Town:
-			return _drain_texture($GroundLayer/Town, $TopLayer/Town, delta)			
+			return _drain_texture($GroundLayer/Town, $TopLayer/Town, delta, town_consume_time)			
 		
 	return true
 
 
-func _drain_texture(ground, top, delta) -> bool:
+func _drain_texture(ground, top, delta, consume_time) -> bool:
 	if ground.modulate.a <= 0:
 		return false
-	ground.modulate.a -= delta / forest_path_consume_time
-	top.modulate.a -= delta / forest_path_consume_time
+	ground.modulate.a -= delta / consume_time
+	top.modulate.a -= delta / consume_time
 
 	return true
 
